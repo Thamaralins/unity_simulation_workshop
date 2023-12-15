@@ -26,6 +26,26 @@ public class FlatFish : MonoBehaviour
 
     Vector3 buoyancyForce = new Vector3(0.0f, buoyancy, 0.0f);
     
+    if (Input.GetKeyDown(KeyCode.W))
+      IncreaseForceX(5.0f);
+    if (Input.GetKeyDown(KeyCode.S))
+      IncreaseForceX(-5.0f);
+
+    if (Input.GetKeyDown(KeyCode.A))
+      IncreaseForceY(5.0f);
+    if (Input.GetKeyDown(KeyCode.D))
+      IncreaseForceY(-5.0f);
+
+    if (Input.GetKeyDown(KeyCode.Q))
+      IncreaseForceZ(5.0f);
+    if (Input.GetKeyDown(KeyCode.E))
+      IncreaseForceZ(-5.0f);
+
+    if (Input.GetKeyDown(KeyCode.Z))
+      IncreaseTorqueZ(5.0f);
+    if (Input.GetKeyDown(KeyCode.X))
+      IncreaseTorqueZ(-5.0f);
+    
     // Weight force is already applied by Rigidbody
     FlatFishRB.AddRelativeForce(buoyancyForce + inputForce);
     FlatFishRB.AddRelativeTorque(inputTorque);
